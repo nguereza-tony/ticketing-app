@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:ticketing/i18n/translations.g.dart';
-import 'package:ticketing/screens/qr_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
+import 'package:ticketing/i18n/translations.g.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -44,7 +43,7 @@ class _AboutScreenState extends State<AboutScreen> {
             children: [
               const CircleAvatar(
                 radius: 48,
-                backgroundImage: AssetImage('assets/images/logo.jpg'),
+                backgroundImage: AssetImage('assets/images/logo.png'),
               ),
               const SizedBox(
                 height: 10,
@@ -107,9 +106,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 height: 15,
               ),
               IconButton(
-                onPressed: () {
-                  switchToScreen(context, const QrScreen());
-                },
+                onPressed: () {},
                 icon: const Icon(Icons.share_outlined),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kButtonBgColor,
