@@ -1,0 +1,14 @@
+{
+  "user_create_success": "Votre compte a été créé avec succès",
+  "user_create_pin_success": "Votre code PIN a été créé avec succès",
+  "user_edit_pin_success": "Votre code PIN a été modifié avec succès",
+  "reset_pin_success": "Votre code PIN a été réinitialisé avec succès",
+  "user_validated_success": "Votre compte a été validé avec succès",
+  "income_create_success": "Le revenu a été ajouté avec succès",
+  "income_delete_success": "Le revenu a été supprimé avec succès",
+  "expense_create_success": "La dépense a été créée avec succès",
+  "expense_delete_success": "La dépense a été supprimée avec succès",
+  "budget_create_success": "Le budget a été créé avec succès",
+  "budget_edit_success": "Le budget a été modifié avec succès",
+  "budget_delete_success": "Le budget a été supprimé avec succès"
+}

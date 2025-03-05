@@ -1,0 +1,8 @@
+{
+  "code": "Code",
+  "pin": "Code PIN",
+  "confirm_pin": "Confirmation de code PIN",
+  "currency": "Devise",
+  "tag": "Tag",
+  "amount": "Montant"
+}

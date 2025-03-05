@@ -1,0 +1,38 @@
+base_locale: fr
+fallback_strategy: base_locale_empty_string
+input_directory: assets/i18n
+input_file_pattern: .json
+output_directory: lib/i18n
+output_file_name: translations.g.dart
+locale_handling: true
+flutter_integration: true
+namespaces: true
+translate_var: t
+enum_name: AppLocale
+class_name: Translations
+translation_class_visibility: private
+key_case: camel
+key_map_case: snake
+param_case: snake
+string_interpolation: braces
+flat_map: false
+translation_overrides: false
+timestamp: true
+statistics: true
+maps:
+  - error.codes
+  - category
+  - iconNames
+pluralization:
+  auto: cardinal
+  default_parameter: n
+  cardinal:
+    - someKey.apple
+  ordinal:
+    - someKey.place
+contexts:
+interfaces:
+obfuscation:
+  enabled: true
+  secret: null
+imports:

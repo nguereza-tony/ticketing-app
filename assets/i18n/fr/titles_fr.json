@@ -1,0 +1,15 @@
+{
+  "user_create": "Création du compte",
+  "user_create_pin": "Création d'un code PIN",
+  "user_edit_pin": "Modifier votre code PIN",
+  "reset_pin": "Réinitialiser votre code PIN",
+  "incomes": "Revenus",
+  "income_create": "Ajouter un revenu",
+  "expenses": "Dépenses",
+  "expense_create": "Ajouter une dépense",
+  "budgets": "Budgets",
+  "budget_create": "Ajout d'un budget",
+  "budget_edit": "Modifier un budget",
+  "transactions": "Transactions",
+  "statistic": "Statistiques"
+}
