@@ -7,6 +7,7 @@
     "update_date": "Date de mise à jour",
     "build_number": "Numéro de version"
   },
+  "cancel": "Annuler",
   "input_mail_validation_code": "Saisir le code reçu par mail",
   "personal_infos": "Informations personnelles",
   "hello": "Salut",

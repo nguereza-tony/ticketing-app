@@ -1,5 +1,7 @@
 {
   "statistic": "Statistiques",
+  "ticket_verification": "Vérification d'un ticket",
+  "ticket_status_check": "Statut d'un ticket",
   "ticket_validated": "Tickets validés",
   "latest_ticket_validated": "Derniers tickets validés"
 }
