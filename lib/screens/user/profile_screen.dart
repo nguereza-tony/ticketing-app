@@ -139,6 +139,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(
                 height: 8,
               ),
+              ProfileItem(
+                icon: Icons.schedule_outlined,
+                title: user.lastLogin ?? '',
+              ),
+              const SizedBox(
+                height: 8,
+              ),
               const SizedBox(
                 height: 16,
               ),

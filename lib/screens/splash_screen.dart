@@ -1,8 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ticketing/screens/onboarding_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
+import 'package:ticketing/screens/onboarding_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
     return AnimatedSplashScreen(
       splash: const CircleAvatar(
         radius: 48,
-        backgroundImage: AssetImage('assets/images/logo.jpg'),
+        backgroundImage: AssetImage('assets/images/logo.png'),
       ),
       backgroundColor: kBorderColor,
       nextScreen: const OnBoardingScreen(),

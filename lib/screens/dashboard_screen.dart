@@ -4,6 +4,7 @@ import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 import 'package:ticketing/i18n/translations.g.dart';
 import 'package:ticketing/screens/home_screen.dart';
 import 'package:ticketing/screens/stat_screen.dart';
+import 'package:ticketing/screens/ticket/ticket_screen.dart';
 import 'package:ticketing/screens/user/profile_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -19,7 +20,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   static final List<Widget> _widgets = [
     const HomeScreen(),
     const StatScreen(),
-    const Text('Transactions'),
+    TicketScreen(
+      filters: 1 == 1 ? {} : {},
+    ),
     const ProfileScreen(),
   ];
 

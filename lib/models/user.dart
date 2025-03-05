@@ -9,6 +9,7 @@ class User {
   String lastname;
   String firstname;
   String email;
+  String? lastLogin;
   List<String> permissions = [];
 
   User({
@@ -18,6 +19,7 @@ class User {
     required this.firstname,
     required this.email,
     required this.permissions,
+    this.lastLogin,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {

@@ -15,6 +15,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       permissions: (json['permissions'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+      lastLogin: json['last_login'] as String?,
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -23,5 +24,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'lastname': instance.lastname,
       'firstname': instance.firstname,
       'email': instance.email,
+      'last_login': instance.lastLogin,
       'permissions': instance.permissions,
     };
