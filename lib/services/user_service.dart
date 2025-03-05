@@ -1,8 +1,8 @@
-import 'package:personal_budget/api/api_client.dart';
-import 'package:personal_budget/api/api_endpoints.dart';
-import 'package:personal_budget/api/type/login_response.dart';
-import 'package:personal_budget/models/user.dart';
-import 'package:personal_budget/models/user_basic_info.dart';
+import 'package:ticketing/api/api_client.dart';
+import 'package:ticketing/api/api_endpoints.dart';
+import 'package:ticketing/api/type/login_response.dart';
+import 'package:ticketing/models/user.dart';
+import 'package:ticketing/models/user_basic_info.dart';
 
 class UserService {
   Future<LoginResponse?> login({
@@ -19,29 +19,6 @@ class UserService {
     }
 
     return null;
-  }
-
-  Future<bool> createUser({
-    required String username,
-    required String email,
-    required String lastname,
-    required String firstname,
-    required int currency,
-    required String password,
-    required String confirmPassword,
-  }) async {
-    var api = await ApiClient().create();
-    final response = await api.post(ApiEndpoints.userCreate, data: {
-      'username': username,
-      'email': email,
-      'lastname': lastname,
-      'firstname': firstname,
-      'currency': currency,
-      'password': password,
-      'password_confirm': confirmPassword,
-    });
-
-    return response.isSuccess;
   }
 
   Future<bool> editUser({
@@ -90,47 +67,6 @@ class UserService {
       'code': code,
       'password': password,
       'confirm_password': confirmPassword,
-    });
-
-    return response.isSuccess;
-  }
-
-  Future<bool> createPin({
-    required String code,
-    required String confirmPin,
-  }) async {
-    var api = await ApiClient().create();
-    final response = await api.post(ApiEndpoints.userCreatePin, data: {
-      'code': code,
-      'confirm': confirmPin,
-    });
-
-    return response.isSuccess;
-  }
-
-  Future<bool> editPin({
-    required String pin,
-    required String code,
-    required String confirmPin,
-  }) async {
-    var api = await ApiClient().create();
-    final response = await api.put(ApiEndpoints.userEditPin, data: {
-      'pin': pin,
-      'code': code,
-      'confirm': confirmPin,
-    });
-
-    return response.isSuccess;
-  }
-
-  Future<bool> resetPin({
-    required String code,
-    required String confirmPin,
-  }) async {
-    var api = await ApiClient().create();
-    final response = await api.post(ApiEndpoints.userResetPin, data: {
-      'code': code,
-      'confirm': confirmPin,
     });
 
     return response.isSuccess;

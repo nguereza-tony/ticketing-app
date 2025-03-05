@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:personal_budget/components/icons.dart';
-import 'package:personal_budget/components/service_card.dart';
-import 'package:personal_budget/components/transaction_item.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
-import 'package:personal_budget/providers/user_provider.dart';
-import 'package:personal_budget/screens/budget/budget_screen.dart';
-import 'package:personal_budget/screens/expense/expense_screen.dart';
-import 'package:personal_budget/screens/income/income_create_screen.dart';
-import 'package:personal_budget/screens/income/income_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:ticketing/components/service_card.dart';
+import 'package:ticketing/i18n/translations.g.dart';
+import 'package:ticketing/providers/user_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -59,12 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         }
 
-        List<Widget> transactionWidgets = [];
-        for (var i in userInfo.transactions) {
-          transactionWidgets.add(TransactionItem(transaction: i));
-        }
-        final amountFormatted = formatNumber(userInfo.user.balance, 2);
-
         return RefreshIndicator(
           onRefresh: _handleRefresh,
           child: SingleChildScrollView(
@@ -109,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Padding(
                           padding: const EdgeInsets.only(left: 4),
                           child: Text(
-                            t.labels.balance,
+                            '456',
                             style: TextStyle(
                               color: HexColor('#CCCCCC'),
                               fontWeight: FontWeight.w400,
@@ -123,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Padding(
                               padding: const EdgeInsets.only(left: 4),
                               child: Text(
-                                '$amountFormatted ${userInfo.user.currency?.code}',
+                                '784 XAF',
                                 style: TextStyle(
                                   color: HexColor('#E3E3E4'),
                                   fontWeight: FontWeight.w500,
@@ -134,12 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const Spacer(),
                             InkWell(
-                              onTap: () {
-                                switchToScreen(
-                                  context,
-                                  const IncomeCreateScreen(),
-                                );
-                              },
+                              onTap: () {},
                               child: CircleAvatar(
                                 radius: 18,
                                 backgroundColor:
@@ -195,40 +178,25 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 ServiceCard(
-                                  title: t.labels.serviceExpenses,
-                                  icon: sendIcon,
-                                  action: () {
-                                    switchToScreen(
-                                      context,
-                                      ExpenseScreen(),
-                                    );
-                                  },
+                                  title: t.labels.stats,
+                                  icon: const Icon(Icons.add),
+                                  action: () {},
                                 ),
                                 const SizedBox(
                                   width: 30,
                                 ),
                                 ServiceCard(
-                                  title: t.labels.serviceIncomes,
-                                  icon: paymentIcon,
-                                  action: () {
-                                    switchToScreen(
-                                      context,
-                                      IncomeScreen(),
-                                    );
-                                  },
+                                  title: t.labels.stats,
+                                  icon: const Icon(Icons.add),
+                                  action: () {},
                                 ),
                                 const SizedBox(
                                   width: 30,
                                 ),
                                 ServiceCard(
-                                  title: t.labels.serviceBudgets,
-                                  icon: billIcon,
-                                  action: () {
-                                    switchToScreen(
-                                      context,
-                                      BudgetScreen(),
-                                    );
-                                  },
+                                  title: t.labels.stats,
+                                  icon: const Icon(Icons.add),
+                                  action: () {},
                                 ),
                               ],
                             ),
@@ -241,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: Text(
-                          t.labels.transactions,
+                          t.labels.stats,
                           style: TextStyle(
                             color: HexColor('#939094'),
                             fontWeight: FontWeight.w600,
@@ -250,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      if (transactionWidgets.isNotEmpty) ...[
+                      if (1 == 0) ...[
                         Container(
                           margin: const EdgeInsets.only(
                             top: 20,
@@ -266,9 +234,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             borderRadius: BorderRadius.circular(24),
                           ),
-                          child: Column(
+                          child: const Column(
                             children: [
-                              ...transactionWidgets,
+                              ...[Text('Foo')],
                             ],
                           ),
                         ),

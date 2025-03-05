@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
-import 'package:personal_budget/screens/home_screen.dart';
-import 'package:personal_budget/screens/stat_screen.dart';
-import 'package:personal_budget/screens/transaction/transaction_screen.dart';
-import 'package:personal_budget/screens/user/profile_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
+import 'package:ticketing/i18n/translations.g.dart';
+import 'package:ticketing/screens/home_screen.dart';
+import 'package:ticketing/screens/stat_screen.dart';
+import 'package:ticketing/screens/user/profile_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -20,9 +19,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   static final List<Widget> _widgets = [
     const HomeScreen(),
     const StatScreen(),
-    TransactionScreen(
-      filters: 1 == 1 ? {} : {},
-    ),
+    const Text('Transactions'),
     const ProfileScreen(),
   ];
 
@@ -60,7 +57,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.schedule_outlined),
-            label: t.titles.transactions,
+            label: t.titles.statistic,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.account_circle_outlined),

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/api/api_client.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
-import 'package:personal_budget/providers/user_provider.dart';
-import 'package:personal_budget/screens/dashboard_screen.dart';
-import 'package:personal_budget/screens/user/password/reset_password_screen.dart';
-import 'package:personal_budget/screens/user/user_create_screen.dart';
-import 'package:personal_budget/validators/login_validator.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 import 'package:provider/provider.dart';
+import 'package:ticketing/api/api_client.dart';
+import 'package:ticketing/providers/user_provider.dart';
+import 'package:ticketing/screens/dashboard_screen.dart';
+import 'package:ticketing/screens/user/password/reset_password_screen.dart';
+import 'package:ticketing/validators/login_validator.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,7 +23,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final t = Translations.of(context);
     final pft = platine_i18n.Translations.of(context);
 
     return Scaffold(
@@ -130,20 +127,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           const SizedBox(
                             width: 5,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              switchToScreen(context, const UserCreateScreen());
-                            },
-                            child: Text(
-                              t.labels.actions.createUser,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                                fontFamily: 'poppins',
-                                color: kActionColor,
-                              ),
-                            ),
                           ),
                           Flexible(child: Container()),
                           InkWell(

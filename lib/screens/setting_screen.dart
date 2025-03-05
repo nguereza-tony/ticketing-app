@@ -1,6 +1,6 @@
 import 'package:clean_settings_nnbd/clean_settings_nnbd.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
+import 'package:ticketing/i18n/translations.g.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 

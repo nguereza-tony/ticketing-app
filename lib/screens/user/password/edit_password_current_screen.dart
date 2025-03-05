@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/screens/user/password/edit_password_screen.dart';
-import 'package:personal_budget/validators/user_create_validator.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
+import 'package:ticketing/screens/user/password/edit_password_screen.dart';
+import 'package:ticketing/validators/password_validator.dart';
 
 class EditPasswordCurrentScreen extends StatefulWidget {
   const EditPasswordCurrentScreen({super.key});
@@ -46,7 +46,7 @@ class _EditPasswordCurrentScreenState extends State<EditPasswordCurrentScreen> {
                       hidden: true,
                       prefixIcon: Icons.lock,
                       validator: (text) =>
-                          UserCreateValidator.password(text?.trim()),
+                          PasswordValidator.password(text?.trim()),
                     ),
                     const SizedBox(
                       height: 10,

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
-import 'package:personal_budget/providers/user_provider.dart';
-import 'package:personal_budget/screens/about_screen.dart';
-import 'package:personal_budget/screens/setting_screen.dart';
-import 'package:personal_budget/screens/user/login_screen.dart';
-import 'package:personal_budget/screens/user/password/edit_password_current_screen.dart';
-import 'package:personal_budget/screens/user/pin/create_pin_screen.dart';
-import 'package:personal_budget/screens/user/pin/edit_pin_current_screen.dart';
-import 'package:personal_budget/screens/user/pin/reset_pin_screen.dart';
-import 'package:personal_budget/screens/user/user_edit_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 import 'package:provider/provider.dart';
+import 'package:ticketing/i18n/translations.g.dart';
+import 'package:ticketing/providers/user_provider.dart';
+import 'package:ticketing/screens/about_screen.dart';
+import 'package:ticketing/screens/setting_screen.dart';
+import 'package:ticketing/screens/user/login_screen.dart';
+import 'package:ticketing/screens/user/password/edit_password_current_screen.dart';
+import 'package:ticketing/screens/user/user_edit_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -142,10 +139,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(
                 height: 8,
               ),
-              ProfileItem(
-                icon: Icons.attach_money_outlined,
-                title: '${user.currency?.name} (${user.currency?.code})',
-              ),
               const SizedBox(
                 height: 16,
               ),
@@ -170,33 +163,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(
                 height: 10,
               ),
-              if (user.pinSet) ...[
-                ProfileAction(
-                  title: t.labels.actions.changePin,
-                  action: () {
-                    switchToScreen(context, const EditPinCurrentScreen());
-                  },
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ProfileAction(
-                  title: t.labels.actions.resetPin,
-                  action: () {
-                    switchToScreen(
-                      context,
-                      ResetPinScreen(email: user.email),
-                    );
-                  },
-                ),
-              ] else ...[
-                ProfileAction(
-                  title: t.labels.actions.createPin,
-                  action: () {
-                    switchToScreen(context, const CreatePinScreen());
-                  },
-                ),
-              ],
               const SizedBox(
                 height: 10,
               ),

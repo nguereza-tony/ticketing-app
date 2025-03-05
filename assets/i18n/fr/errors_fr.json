@@ -1,11 +1,6 @@
 {
   "api": {
-    "incorrect_user_pin": "Code PIN incorrect",
-    "user_pin_already_set": "Le code PIN est déjà défini",
-    "user_pin_not_set": "Le code PIN n'est pas encore défini",
-    "user_account_already_validated": "Compte d'utilisateur déjà validé",
-    "user_balance_not_enough": "Solde du compte insuffisant",
-    "user_balance_negative": "Le solde du compte sera négatif",
-    "budget_date_overlapped": "La date du budget se chevauche"
+    "ticket_not_found": "Ce ticket n'existe pas",
+    "ticket_already_validated": "Ce ticket est déjà utilisé"
   }
 }

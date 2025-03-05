@@ -1,5 +1,5 @@
 import 'package:fast_validator/fast_validator.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
+import 'package:ticketing/i18n/translations.g.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as pft;
 

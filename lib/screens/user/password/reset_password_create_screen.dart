@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/screens/user/login_screen.dart';
-import 'package:personal_budget/services/user_service.dart';
-import 'package:personal_budget/validators/reset_password_validator.dart';
+import 'package:ticketing/screens/user/login_screen.dart';
+import 'package:ticketing/services/user_service.dart';
+import 'package:ticketing/validators/reset_password_validator.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 

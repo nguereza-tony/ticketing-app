@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
-import 'package:personal_budget/screens/qr_screen.dart';
+import 'package:ticketing/i18n/translations.g.dart';
+import 'package:ticketing/screens/qr_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 

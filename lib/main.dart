@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:personal_budget/i18n/translations.g.dart' as i18n;
-import 'package:personal_budget/providers/budget_provider.dart';
-import 'package:personal_budget/providers/currency_provider.dart';
-import 'package:personal_budget/providers/expense_provider.dart';
-import 'package:personal_budget/providers/income_provider.dart';
-import 'package:personal_budget/providers/tag_provider.dart';
-import 'package:personal_budget/providers/transaction_provider.dart';
-import 'package:personal_budget/providers/user_provider.dart';
-import 'package:personal_budget/screens/splash_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:rest_api_client/rest_api_client.dart';
+import 'package:ticketing/i18n/translations.g.dart' as i18n;
+import 'package:ticketing/providers/user_provider.dart';
+import 'package:ticketing/screens/splash_screen.dart';
 import 'package:toastification/toastification.dart';
 
 void main() async {
@@ -73,27 +67,8 @@ class Application extends StatelessWidget {
       ChangeNotifierProvider(
         create: (context) => UserProvider(),
       ),
-      ChangeNotifierProvider(
-        create: (context) => CurrencyProvider(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => BudgetProvider(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => TagProvider(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => IncomeProvider(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => ExpenseProvider(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => TransactionProvider(),
-      ),
     ];
 
     return providers;
   }
 }
-

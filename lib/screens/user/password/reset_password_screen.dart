@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/helpers/app_helper.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
-import 'package:personal_budget/screens/user/password/reset_password_confirm_code_screen.dart';
-import 'package:personal_budget/services/validation_code_service.dart';
-import 'package:personal_budget/validators/reset_password_validator.dart';
+import 'package:ticketing/helpers/app_helper.dart';
+import 'package:ticketing/i18n/translations.g.dart';
+import 'package:ticketing/screens/user/password/reset_password_confirm_code_screen.dart';
+import 'package:ticketing/services/validation_code_service.dart';
+import 'package:ticketing/validators/reset_password_validator.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 

@@ -1,6 +1,6 @@
-import 'package:personal_budget/api/api_endpoints.dart';
-import 'package:personal_budget/api/api_error_codes.dart';
-import 'package:personal_budget/constants/app_config.dart';
+import 'package:ticketing/api/api_endpoints.dart';
+import 'package:ticketing/api/api_error_codes.dart';
+import 'package:ticketing/constants/app_config.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:rest_api_client/rest_api_client.dart';
 

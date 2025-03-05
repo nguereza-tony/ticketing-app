@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:personal_budget/models/user.dart';
-import 'package:personal_budget/models/user_basic_info.dart';
-import 'package:personal_budget/services/user_service.dart';
+import 'package:ticketing/models/user.dart';
+import 'package:ticketing/models/user_basic_info.dart';
+import 'package:ticketing/services/user_service.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 
 class UserProvider extends ChangeNotifier {

@@ -1,5 +1,4 @@
 class ApiEndpoints {
-  static const userCreate = '/users';
   static const userLogin = '/users/login';
   static const userEdit = '/users/profile';
   static const userProfile = '/users/profile';
@@ -9,21 +8,8 @@ class ApiEndpoints {
   static const userValidationCodeSend = '/users/verification/send';
   static const userValidationCodeConfirm = '/users/verification/confirm';
   static const authToken = '/users/token';
-  static const userCreatePin = '/users/pin';
-  static const userEditPin = '/users/pin';
-  static const userResetPin = '/users/pin/reset';
-  static const currencyList = '/currencies';
-  static const tagList = '/tags';
-  static const budgetList = '/budgets';
-  static const budgetCreate = '/budgets';
-  static const budgetDelete = '/budgets';
-  static const budgetEdit = '/budgets';
-  static const incomeList = '/incomes';
-  static const incomeCreate = '/incomes';
-  static const incomeDelete = '/incomes';
-  static const expenseList = '/expenses';
-  static const expenseCreate = '/expenses';
-  static const expenseDelete = '/expenses';
-  static const transactionList = '/transactions';
-  static const transactionStatistic = '/transactions/stat';
+  static const ticketList = '/tickets';
+  static const ticketDetail = '/tickets';
+  static const ticketInfo = '/tickets/info';
+  static const ticketValidation = '/tickets/validate';
 }

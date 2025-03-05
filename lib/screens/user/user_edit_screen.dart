@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/helpers/app_helper.dart';
-import 'package:personal_budget/i18n/translations.g.dart';
-import 'package:personal_budget/models/user.dart';
-import 'package:personal_budget/providers/currency_provider.dart';
-import 'package:personal_budget/screens/user/profile_screen.dart';
-import 'package:personal_budget/services/user_service.dart';
-import 'package:personal_budget/validators/user_create_validator.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 import 'package:provider/provider.dart';
+import 'package:ticketing/models/user.dart';
+import 'package:ticketing/providers/user_provider.dart';
+import 'package:ticketing/screens/user/profile_screen.dart';
+import 'package:ticketing/services/user_service.dart';
+import 'package:ticketing/validators/user_validator.dart';
 
 class UserEditScreen extends StatefulWidget {
   User user;
@@ -31,34 +29,29 @@ class _UserEditScreenState extends State<UserEditScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((ts) {
-      Provider.of<CurrencyProvider>(context, listen: false).getCurrencies();
-    });
+    WidgetsBinding.instance.addPostFrameCallback((ts) {});
 
     var user = widget.user;
     username.text = user.username;
     email.text = user.email;
     lastname.text = user.lastname;
     firstname.text = user.firstname;
-    currency.text = user.currency?.id.toString() ?? '';
   }
 
   @override
   Widget build(BuildContext context) {
-    final t = Translations.of(context);
     final pft = platine_i18n.Translations.of(context);
 
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: getAppHeader(title: pft.titles.userEdit),
-      body: Consumer<CurrencyProvider>(
-        builder: (context, currencyProvider, _) {
-          if (currencyProvider.items.isEmpty) {
+      body: Consumer<UserProvider>(
+        builder: (context, userProvider, _) {
+          if (userProvider.user == null) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
-          var currencies = getCurrencyItems(currencyProvider.items);
 
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -80,7 +73,7 @@ class _UserEditScreenState extends State<UserEditScreen> {
                           inputType: TextInputType.text,
                           prefixIcon: Icons.person_rounded,
                           validator: (text) =>
-                              UserCreateValidator.username(text?.trim()),
+                              UserValidator.username(text?.trim()),
                         ),
                         const SizedBox(
                           height: 10,
@@ -91,7 +84,7 @@ class _UserEditScreenState extends State<UserEditScreen> {
                           inputType: TextInputType.emailAddress,
                           prefixIcon: Icons.email,
                           validator: (text) =>
-                              UserCreateValidator.email(text?.trim()),
+                              UserValidator.email(text?.trim()),
                         ),
                         const SizedBox(
                           height: 10,
@@ -105,7 +98,7 @@ class _UserEditScreenState extends State<UserEditScreen> {
                                 inputType: TextInputType.name,
                                 prefixIcon: null,
                                 validator: (text) =>
-                                    UserCreateValidator.lastname(text?.trim()),
+                                    UserValidator.lastname(text?.trim()),
                               ),
                             ),
                             const SizedBox(
@@ -118,23 +111,10 @@ class _UserEditScreenState extends State<UserEditScreen> {
                                 inputType: TextInputType.name,
                                 prefixIcon: null,
                                 validator: (text) =>
-                                    UserCreateValidator.firstname(text?.trim()),
+                                    UserValidator.firstname(text?.trim()),
                               ),
                             ),
                           ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        AppSelectFormField(
-                          controller: currency,
-                          placeholder: t.placeholders.currency,
-                          prefixIcon: Icons.attach_money,
-                          suffixIcon: Icons.keyboard_arrow_down_sharp,
-                          items: currencies,
-                          onChange: null,
-                          validator: (text) =>
-                              UserCreateValidator.currency(text?.trim()),
                         ),
                         const SizedBox(
                           height: 20,

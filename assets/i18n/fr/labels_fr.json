@@ -1,41 +1,17 @@
 {
   "app": {
-    "name": "Personal Budget",
-    "description": "Le Personal Budget est une application de gestion financière qui permet à un individu ou à une famille de budgétiser, d'épargner et de dépenser des ressources monétaires de manière contrôlée.",
+    "name": "Ticketing",
+    "description": "Le Ticketing est une application de gestion des billets lors d'un évènement (sport, mariage, etc.)",
     "version": "Version",
     "install_date": "Date d'installation",
     "update_date": "Date de mise à jour",
     "build_number": "Numéro de version"
   },
   "input_mail_validation_code": "Saisir le code reçu par mail",
-  "input_current_pin_code": "Code pin actuel",
-  "input_new_pin_code": "Nouveau code pin",
-  "input_confirm_new_pin_code": "Confirmer le nouveau code pin",
-  "input_pin_code": "Entrez le code pin",
-  "input_confirm_pin_code": "Confirmez le code pin",
   "personal_infos": "Informations personnelles",
   "hello": "Salut",
-  "balance": "Solde",
   "services": "Services",
   "stats": "Stats",
-  "transactions": "Transactions",
-  "service_expenses": "Dépenses",
-  "service_incomes": "Revenus",
-  "service_budgets": "Budgets",
-  "transaction_amount_per_types": "Transactions par type",
-  "expense_amount_per_tags": "Dépenses par catégorie",
-  "income_amount_per_tags": "Revenus par catégorie",
-  "last_expense_monthly_amounts": "Total dépenses par mois",
-  "last_income_monthly_amounts": "Total revenus par mois",
-  "transaction_type": {
-    "other": "Autre",
-    "expense": "Dépense",
-    "income": "Revenu"
-  },
   "actions": {
-    "create_user": "Créer un compte",
-    "change_pin": "Changer le code pin",
-    "create_pin": "Créer le code pin",
-    "reset_pin": "Réinitialiser le code pin"
   }
 }

@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:personal_budget/models/user.dart';
+import 'package:ticketing/models/user.dart';
 
 part 'login_response.g.dart';
 

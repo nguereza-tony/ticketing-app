@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_budget/screens/dashboard_screen.dart';
-import 'package:personal_budget/screens/user/login_screen.dart';
+import 'package:ticketing/screens/dashboard_screen.dart';
+import 'package:ticketing/screens/user/login_screen.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 
 class OnBoardingScreen extends StatefulWidget {
