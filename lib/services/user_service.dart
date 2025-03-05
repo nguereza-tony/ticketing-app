@@ -26,7 +26,6 @@ class UserService {
     required String email,
     required String lastname,
     required String firstname,
-    required int currency,
   }) async {
     var api = await ApiClient().create();
     final response = await api.put(ApiEndpoints.userEdit, data: {
@@ -34,7 +33,6 @@ class UserService {
       'email': email,
       'lastname': lastname,
       'firstname': firstname,
-      'currency': currency,
     });
 
     return response.isSuccess;

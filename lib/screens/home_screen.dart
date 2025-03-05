@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:platine_flutter/platine_flutter.dart';
+import 'package:platine_flutter/platine_i18n.dart' as platine_i18n;
 import 'package:provider/provider.dart';
 import 'package:ticketing/components/service_card.dart';
+import 'package:ticketing/components/ticket_item.dart';
 import 'package:ticketing/i18n/translations.g.dart';
 import 'package:ticketing/providers/user_provider.dart';
+import 'package:ticketing/screens/user/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Scaffold build(BuildContext context) {
+    final pft = platine_i18n.Translations.of(context);
     final t = Translations.of(context);
 
     return Scaffold(
@@ -41,16 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
         final userInfo = userProvider.userBasicInfo;
         if (userInfo == null) {
           return const Center(
-            child: Text(
-              'User info not found',
-              style: TextStyle(
-                fontFamily: 'poppins',
-                fontSize: 30,
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
+            child: CircularProgressIndicator(),
           );
+        }
+
+        List<Widget> ticketWidgets = [];
+        for (var i in userInfo.tickets) {
+          ticketWidgets.add(TicketItem(ticket: i));
         }
 
         return RefreshIndicator(
@@ -92,26 +93,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         const SizedBox(
-                          height: 35,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 4),
-                          child: Text(
-                            '456',
-                            style: TextStyle(
-                              color: HexColor('#CCCCCC'),
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18,
-                              fontFamily: 'poppins',
-                            ),
-                          ),
+                          height: 55,
                         ),
                         Row(
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(left: 4),
                               child: Text(
-                                '784 XAF',
+                                t.labels.app.name,
                                 style: TextStyle(
                                   color: HexColor('#E3E3E4'),
                                   fontWeight: FontWeight.w500,
@@ -128,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundColor:
                                     HexColor('#F7F7F7').withOpacity(0.2),
                                 child: const Icon(
-                                  Icons.add,
+                                  Icons.qr_code_2_outlined,
                                   color: Colors.white,
                                 ),
                               ),
@@ -178,25 +167,32 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 ServiceCard(
-                                  title: t.labels.stats,
-                                  icon: const Icon(Icons.add),
+                                  title: t.labels.ticketValidate,
+                                  icon: const Icon(Icons.qr_code_outlined),
                                   action: () {},
                                 ),
                                 const SizedBox(
                                   width: 30,
                                 ),
                                 ServiceCard(
-                                  title: t.labels.stats,
-                                  icon: const Icon(Icons.add),
+                                  title: t.labels.ticketStatus,
+                                  icon: const Icon(
+                                    Icons.check_circle_outline_outlined,
+                                  ),
                                   action: () {},
                                 ),
                                 const SizedBox(
                                   width: 30,
                                 ),
                                 ServiceCard(
-                                  title: t.labels.stats,
-                                  icon: const Icon(Icons.add),
-                                  action: () {},
+                                  title: pft.titles.userProfile,
+                                  icon: const Icon(Icons.people_outlined),
+                                  action: () {
+                                    switchToScreen(
+                                      context,
+                                      const ProfileScreen(),
+                                    );
+                                  },
                                 ),
                               ],
                             ),
@@ -209,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: Text(
-                          t.labels.stats,
+                          t.titles.latestTicketValidated,
                           style: TextStyle(
                             color: HexColor('#939094'),
                             fontWeight: FontWeight.w600,
@@ -218,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      if (1 == 0) ...[
+                      if (ticketWidgets.isNotEmpty) ...[
                         Container(
                           margin: const EdgeInsets.only(
                             top: 20,
@@ -234,9 +230,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             borderRadius: BorderRadius.circular(24),
                           ),
-                          child: const Column(
+                          child: Column(
                             children: [
-                              ...[Text('Foo')],
+                              ...ticketWidgets,
                             ],
                           ),
                         ),

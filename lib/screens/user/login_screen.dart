@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(
                             width: 5,
                           ),
-                          Flexible(child: Container()),
+
                           InkWell(
                             onTap: () {
                               switchToScreen(

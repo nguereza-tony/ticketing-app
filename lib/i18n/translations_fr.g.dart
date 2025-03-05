@@ -24,7 +24,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
 		    ordinalResolver: ordinalResolver,
-		    s: $calc0(1, 9, 124),
+		    s: $calc0(2, 16, 97),
 		  );
 
 	/// Metadata for the translations of <fr>.
@@ -49,7 +49,7 @@ class TranslationsButtonsFr {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get sendCode => _root.$meta.d([42, 1, 25, 0, 22, 10, 29, 79, 3, 10, 79, 12, 0, 11, 10]);
+	String get sendCode => _root.$meta.d([6, 45, 53, 44, 58, 38, 49, 99, 47, 38, 99, 32, 44, 39, 38]);
 }
 
 // Path: errors
@@ -69,7 +69,7 @@ class TranslationsFieldsFr {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get code => _root.$meta.d([44, 0, 11, 10]);
+	String get code => _root.$meta.d([0, 44, 39, 38]);
 }
 
 // Path: labels
@@ -80,11 +80,13 @@ class TranslationsLabelsFr {
 
 	// Translations
 	late final TranslationsLabelsAppFr app = TranslationsLabelsAppFr.internal(_root);
-	String get inputMailValidationCode => _root.$meta.d([60, 14, 6, 28, 6, 29, 79, 3, 10, 79, 12, 0, 11, 10, 79, 29, 10, 136, 26, 79, 31, 14, 29, 79, 2, 14, 6, 3]);
-	String get personalInfos => _root.$meta.d([38, 1, 9, 0, 29, 2, 14, 27, 6, 0, 1, 28, 79, 31, 10, 29, 28, 0, 1, 1, 10, 3, 3, 10, 28]);
-	String get hello => _root.$meta.d([60, 14, 3, 26, 27]);
-	String get services => _root.$meta.d([60, 10, 29, 25, 6, 12, 10, 28]);
-	String get stats => _root.$meta.d([60, 27, 14, 27, 28]);
+	String get inputMailValidationCode => _root.$meta.d([16, 34, 42, 48, 42, 49, 99, 47, 38, 99, 32, 44, 39, 38, 99, 49, 38, 164, 54, 99, 51, 34, 49, 99, 46, 34, 42, 47]);
+	String get personalInfos => _root.$meta.d([10, 45, 37, 44, 49, 46, 34, 55, 42, 44, 45, 48, 99, 51, 38, 49, 48, 44, 45, 45, 38, 47, 47, 38, 48]);
+	String get hello => _root.$meta.d([16, 34, 47, 54, 55]);
+	String get services => _root.$meta.d([16, 38, 49, 53, 42, 32, 38, 48]);
+	String get stats => _root.$meta.d([16, 55, 34, 55, 48]);
+	String get ticketValidate => _root.$meta.d([21, 170, 49, 42, 37, 42, 32, 34, 55, 42, 44, 45]);
+	String get ticketStatus => _root.$meta.d([16, 55, 34, 55, 54, 55, 99, 55, 42, 32, 40, 38, 55]);
 	late final TranslationsLabelsActionsFr actions = TranslationsLabelsActionsFr.internal(_root);
 }
 
@@ -104,7 +106,7 @@ class TranslationsPlaceholdersFr {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get type => _root.$meta.d([59, 22, 31, 10]);
+	String get type => _root.$meta.d([23, 58, 51, 38]);
 }
 
 // Path: titles
@@ -114,7 +116,9 @@ class TranslationsTitlesFr {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get statistic => _root.$meta.d([60, 27, 14, 27, 6, 28, 27, 6, 30, 26, 10, 28]);
+	String get statistic => _root.$meta.d([16, 55, 34, 55, 42, 48, 55, 42, 50, 54, 38, 48]);
+	String get ticketValidated => _root.$meta.d([23, 42, 32, 40, 38, 55, 48, 99, 53, 34, 47, 42, 39, 170, 48]);
+	String get latestTicketValidated => _root.$meta.d([7, 38, 49, 45, 42, 38, 49, 48, 99, 55, 42, 32, 40, 38, 55, 48, 99, 53, 34, 47, 42, 39, 170, 48]);
 }
 
 // Path: errors.api
@@ -124,8 +128,8 @@ class TranslationsErrorsApiFr {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get ticketNotFound => _root.$meta.d([44, 10, 79, 27, 6, 12, 4, 10, 27, 79, 1, 72, 10, 23, 6, 28, 27, 10, 79, 31, 14, 28]);
-	String get ticketAlreadyValidated => _root.$meta.d([44, 10, 79, 27, 6, 12, 4, 10, 27, 79, 10, 28, 27, 79, 11, 134, 5, 143, 79, 26, 27, 6, 3, 6, 28, 134]);
+	String get ticketNotFound => _root.$meta.d([0, 38, 99, 55, 42, 32, 40, 38, 55, 99, 45, 100, 38, 59, 42, 48, 55, 38, 99, 51, 34, 48]);
+	String get ticketAlreadyValidated => _root.$meta.d([0, 38, 99, 55, 42, 32, 40, 38, 55, 99, 38, 48, 55, 99, 39, 170, 41, 163, 99, 54, 55, 42, 47, 42, 48, 170]);
 }
 
 // Path: labels.app
@@ -135,12 +139,12 @@ class TranslationsLabelsAppFr {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get name => _root.$meta.d([59, 6, 12, 4, 10, 27, 6, 1, 8]);
-	String get description => _root.$meta.d([35, 10, 79, 59, 6, 12, 4, 10, 27, 6, 1, 8, 79, 10, 28, 27, 79, 26, 1, 10, 79, 14, 31, 31, 3, 6, 12, 14, 27, 6, 0, 1, 79, 11, 10, 79, 8, 10, 28, 27, 6, 0, 1, 79, 11, 10, 28, 79, 13, 6, 3, 3, 10, 27, 28, 79, 3, 0, 29, 28, 79, 11, 72, 26, 1, 79, 134, 25, 135, 1, 10, 2, 10, 1, 27, 79, 71, 28, 31, 0, 29, 27, 67, 79, 2, 14, 29, 6, 14, 8, 10, 67, 79, 10, 27, 12, 65, 70]);
-	String get version => _root.$meta.d([57, 10, 29, 28, 6, 0, 1]);
-	String get installDate => _root.$meta.d([43, 14, 27, 10, 79, 11, 72, 6, 1, 28, 27, 14, 3, 3, 14, 27, 6, 0, 1]);
-	String get updateDate => _root.$meta.d([43, 14, 27, 10, 79, 11, 10, 79, 2, 6, 28, 10, 79, 143, 79, 5, 0, 26, 29]);
-	String get buildNumber => _root.$meta.d([33, 26, 2, 134, 29, 0, 79, 11, 10, 79, 25, 10, 29, 28, 6, 0, 1]);
+	String get name => _root.$meta.d([23, 42, 32, 40, 38, 55, 42, 45, 36]);
+	String get description => _root.$meta.d([15, 38, 99, 23, 42, 32, 40, 38, 55, 42, 45, 36, 99, 38, 48, 55, 99, 54, 45, 38, 99, 34, 51, 51, 47, 42, 32, 34, 55, 42, 44, 45, 99, 39, 38, 99, 36, 38, 48, 55, 42, 44, 45, 99, 39, 38, 48, 99, 33, 42, 47, 47, 38, 55, 48, 99, 47, 44, 49, 48, 99, 39, 100, 54, 45, 99, 170, 53, 171, 45, 38, 46, 38, 45, 55, 99, 107, 48, 51, 44, 49, 55, 111, 99, 46, 34, 49, 42, 34, 36, 38, 111, 99, 38, 55, 32, 109, 106]);
+	String get version => _root.$meta.d([21, 38, 49, 48, 42, 44, 45]);
+	String get installDate => _root.$meta.d([7, 34, 55, 38, 99, 39, 100, 42, 45, 48, 55, 34, 47, 47, 34, 55, 42, 44, 45]);
+	String get updateDate => _root.$meta.d([7, 34, 55, 38, 99, 39, 38, 99, 46, 42, 48, 38, 99, 163, 99, 41, 44, 54, 49]);
+	String get buildNumber => _root.$meta.d([13, 54, 46, 170, 49, 44, 99, 39, 38, 99, 53, 38, 49, 48, 42, 44, 45]);
 }
 
 // Path: labels.actions

@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:rest_api_client/rest_api_client.dart';
 import 'package:ticketing/i18n/translations.g.dart' as i18n;
+import 'package:ticketing/providers/ticket_provider.dart';
 import 'package:ticketing/providers/user_provider.dart';
 import 'package:ticketing/screens/splash_screen.dart';
 import 'package:toastification/toastification.dart';
@@ -66,6 +67,9 @@ class Application extends StatelessWidget {
     List<SingleChildWidget> providers = [
       ChangeNotifierProvider(
         create: (context) => UserProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => TicketProvider(),
       ),
     ];
 

@@ -24,12 +24,10 @@ class _UserEditScreenState extends State<UserEditScreen> {
   TextEditingController email = TextEditingController(text: '');
   TextEditingController lastname = TextEditingController(text: '');
   TextEditingController firstname = TextEditingController(text: '');
-  TextEditingController currency = TextEditingController(text: '');
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((ts) {});
 
     var user = widget.user;
     username.text = user.username;
@@ -89,32 +87,24 @@ class _UserEditScreenState extends State<UserEditScreen> {
                         const SizedBox(
                           height: 10,
                         ),
-                        Row(
-                          children: [
-                            Flexible(
-                              child: AppInputFormField(
-                                controller: lastname,
-                                placeholder: pft.placeholders.lastname,
-                                inputType: TextInputType.name,
-                                prefixIcon: null,
-                                validator: (text) =>
-                                    UserValidator.lastname(text?.trim()),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Flexible(
-                              child: AppInputFormField(
-                                controller: firstname,
-                                placeholder: pft.placeholders.firstname,
-                                inputType: TextInputType.name,
-                                prefixIcon: null,
-                                validator: (text) =>
-                                    UserValidator.firstname(text?.trim()),
-                              ),
-                            ),
-                          ],
+                        AppInputFormField(
+                          controller: lastname,
+                          placeholder: pft.placeholders.lastname,
+                          inputType: TextInputType.name,
+                          prefixIcon: null,
+                          validator: (text) =>
+                              UserValidator.lastname(text?.trim()),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        AppInputFormField(
+                          controller: firstname,
+                          placeholder: pft.placeholders.firstname,
+                          inputType: TextInputType.name,
+                          prefixIcon: null,
+                          validator: (text) =>
+                              UserValidator.firstname(text?.trim()),
                         ),
                         const SizedBox(
                           height: 20,
@@ -138,7 +128,6 @@ class _UserEditScreenState extends State<UserEditScreen> {
                                           email: email.text,
                                           lastname: lastname.text,
                                           firstname: firstname.text,
-                                          currency: int.parse(currency.text),
                                         );
 
                                         // Disabled loading

@@ -15,8 +15,8 @@ class UserBasicInfo {
   });
 
   factory UserBasicInfo.fromJson(Map<String, dynamic> json) {
-    if (json.containsKey('transactions') == false) {
-      json['transactions'] = [];
+    if (json.containsKey('tickets') == false) {
+      json['tickets'] = [];
     }
     return _$UserBasicInfoFromJson(json);
   }

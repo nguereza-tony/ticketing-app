@@ -1,3 +1,5 @@
 {
-  "statistic": "Statistiques"
+  "statistic": "Statistiques",
+  "ticket_validated": "Tickets validés",
+  "latest_ticket_validated": "Derniers tickets validés"
 }
