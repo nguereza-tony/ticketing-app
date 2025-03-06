@@ -8,6 +8,7 @@ import 'package:ticketing/components/ticket_item.dart';
 import 'package:ticketing/i18n/translations.g.dart';
 import 'package:ticketing/providers/user_provider.dart';
 import 'package:ticketing/screens/ticket/ticket_status_screen.dart';
+import 'package:ticketing/screens/ticket/ticket_validate_screen.dart';
 import 'package:ticketing/screens/user/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -112,7 +113,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const Spacer(),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                switchToScreen(
+                                  context,
+                                  const TicketValidateScreen(),
+                                );
+                              },
                               child: CircleAvatar(
                                 radius: 18,
                                 backgroundColor:
@@ -170,7 +176,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ServiceCard(
                                   title: t.labels.ticketValidate,
                                   icon: const Icon(Icons.qr_code_outlined),
-                                  action: () {},
+                                  action: () {
+                                    switchToScreen(
+                                      context,
+                                      const TicketValidateScreen(),
+                                    );
+                                  },
                                 ),
                                 const SizedBox(
                                   width: 30,

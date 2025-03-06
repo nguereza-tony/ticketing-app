@@ -36,4 +36,9 @@ class TicketProvider extends ChangeNotifier {
     isLoadingTicket = false;
     notifyListeners();
   }
+
+  Future<void> clearTicketInfo() async {
+    _ticket = null;
+    notifyListeners();
+  }
 }

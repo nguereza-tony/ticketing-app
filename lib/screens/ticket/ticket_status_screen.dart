@@ -18,6 +18,11 @@ class _TicketStatusScreenState extends State<TicketStatusScreen> {
   @override
   void initState() {
     super.initState();
+    // Fix issue to keep old ticket information even if new
+    // record is empty
+    WidgetsBinding.instance.addPostFrameCallback((ts) {
+      Provider.of<TicketProvider>(context, listen: false).clearTicketInfo();
+    });
   }
 
   @override
@@ -39,7 +44,9 @@ class _TicketStatusScreenState extends State<TicketStatusScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (ticket != null) ...[TicketItem(ticket: ticket)],
+              if (ticket != null) ...[
+                TicketItem(ticket: ticket),
+              ],
               const SizedBox(
                 height: 15,
               ),
@@ -50,6 +57,8 @@ class _TicketStatusScreenState extends State<TicketStatusScreen> {
                   width: double.infinity,
                   child: DefaultButton(
                     onSubmit: () async {
+                      await ticketProvider.clearTicketInfo();
+
                       var code = await scanBarcode(mounted);
                       if (code.isEmpty) {
                         return;

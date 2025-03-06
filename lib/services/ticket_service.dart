@@ -41,4 +41,17 @@ class TicketService {
 
     return null;
   }
+
+  Future<Ticket?> validate(String uuid) async {
+    var api = await ApiClient().create();
+
+    final response = await api.post(
+      '${ApiEndpoints.ticketValidation}/$uuid',
+    );
+    if (response.isSuccess) {
+      return Ticket.fromJson(response.data['data']);
+    }
+
+    return null;
+  }
 }
