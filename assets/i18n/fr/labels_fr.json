@@ -7,6 +7,9 @@
     "update_date": "Date de mise à jour",
     "build_number": "Numéro de version"
   },
+  "draft": "Brouillon",
+  "confirmed": "Confirmer",
+  "validated": "Valider",
   "cancel": "Annuler",
   "input_mail_validation_code": "Saisir le code reçu par mail",
   "personal_infos": "Informations personnelles",

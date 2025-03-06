@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:platine_flutter/platine_flutter.dart';
+import 'package:ticketing/helpers/app_helper.dart';
 import 'package:ticketing/models/ticket.dart';
 
 class TicketItem extends StatelessWidget {
@@ -10,6 +11,7 @@ class TicketItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var status = getTicketStatus();
     return Container(
       margin: const EdgeInsets.all(5),
       padding: const EdgeInsets.all(10),
@@ -69,6 +71,20 @@ class TicketItem extends StatelessWidget {
                 ),
               ),
               Flexible(child: Container()),
+              if (ticket.validator != null) ...[
+                const Icon(Icons.person_rounded),
+                const SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  '${ticket.validator?.lastname} ${ticket.validator?.firstname}',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontFamily: 'poppins',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             ],
           ),
           const SizedBox(
@@ -76,19 +92,33 @@ class TicketItem extends StatelessWidget {
           ),
           Row(
             children: [
-              const Icon(Icons.schedule_outlined),
+              if (ticket.validationDate != null) ...[
+                const Icon(Icons.schedule_outlined),
+                const SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  ticket.validationDate ?? '',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontFamily: 'poppins',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+              Flexible(child: Container()),
+              const Icon(Icons.check_circle_outline),
               const SizedBox(
                 width: 5,
               ),
               Text(
-                ticket.validationDate ?? '',
+                status[ticket.status] ?? '',
                 style: const TextStyle(
                   fontSize: 12,
                   fontFamily: 'poppins',
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              Flexible(child: Container()),
             ],
           ),
         ],

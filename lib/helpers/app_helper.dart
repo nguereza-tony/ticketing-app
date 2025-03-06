@@ -17,6 +17,7 @@ Future<String> scanBarcode(bool mounted) async {
     );
 
     if (code.isEmpty || code == '-1') {
+      code = '';
       NotificationHelper.info(
         t.errors.scanQrCodeNoResultError,
         null,
@@ -38,4 +39,13 @@ Future<String> scanBarcode(bool mounted) async {
   }
 
   return code;
+}
+
+Map<String, String> getTicketStatus() {
+  return {
+    'D': t.labels.draft,
+    'X': t.labels.cancel,
+    'V': t.labels.validated,
+    'C': t.labels.confirmed,
+  };
 }

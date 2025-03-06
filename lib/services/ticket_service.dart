@@ -28,4 +28,17 @@ class TicketService {
 
     return TicketResponse(page: 0, totalPage: 0, items: []);
   }
+
+  Future<Ticket?> info(String uuid) async {
+    var api = await ApiClient().create();
+
+    final response = await api.get(
+      '${ApiEndpoints.ticketInfo}/$uuid',
+    );
+    if (response.isSuccess) {
+      return Ticket.fromJson(response.data['data']);
+    }
+
+    return null;
+  }
 }
