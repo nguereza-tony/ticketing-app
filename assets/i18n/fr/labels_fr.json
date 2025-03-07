@@ -17,7 +17,5 @@
   "services": "Services",
   "stats": "Stats",
   "ticket_validate": "Vérification",
-  "ticket_status": "Statut ticket",
-  "actions": {
-  }
+  "ticket_status": "Statut ticket"
 }

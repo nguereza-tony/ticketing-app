@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platine_flutter/platine_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:ticketing/components/app_bar_chart.dart';
-import 'package:ticketing/components/app_pie_chart.dart';
 import 'package:ticketing/i18n/translations.g.dart';
 import 'package:ticketing/providers/user_provider.dart';
 
@@ -38,75 +36,11 @@ class _StatScreenState extends State<StatScreen> {
 
           return RefreshIndicator(
             onRefresh: _handleRefresh,
-            child: SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
+            child: const SingleChildScrollView(
+              physics: AlwaysScrollableScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  GreyLabel(
-                    text: t.labels.stats,
-                    color: Colors.black,
-                    weight: FontWeight.w700,
-                    size: 16,
-                  ),
-                  AppPieChart(
-                    valueAsTitle: false,
-                    data: const [],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  GreyLabel(
-                    text: t.labels.stats,
-                    color: Colors.black,
-                    weight: FontWeight.w700,
-                    size: 16,
-                  ),
-                  AppPieChart(
-                    valueAsTitle: false,
-                    data: const [],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  GreyLabel(
-                    text: t.labels.stats,
-                    color: Colors.black,
-                    weight: FontWeight.w700,
-                    size: 16,
-                  ),
-                  AppPieChart(
-                    valueAsTitle: false,
-                    data: const [],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  GreyLabel(
-                    text: t.labels.stats,
-                    color: Colors.black,
-                    weight: FontWeight.w700,
-                    size: 16,
-                  ),
-                  AppBarChart(
-                    data: const [],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  GreyLabel(
-                    text: t.labels.stats,
-                    color: Colors.black,
-                    weight: FontWeight.w700,
-                    size: 16,
-                  ),
-                  AppBarChart(
-                    data: const [],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                ],
+                children: [],
               ),
             ),
           );

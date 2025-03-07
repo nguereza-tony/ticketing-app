@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "Ticketing",
+    "description": "Ticketing is an application for managing tickets during an event (sport, wedding, etc.)",
+    "version": "Version",
+    "install_date": "Installation date",
+    "update_date": "Update date",
+    "build_number": "Version number"
+  },
+  "draft": "Draft",
+  "confirmed": "Confirmed",
+  "validated": "Validated",
+  "cancel": "Cancel",
+  "input_mail_validation_code": "Enter the code received by email",
+  "personal_infos": "Personals information",
+  "hello": "Hello",
+  "services": "Services",
+  "stats": "Stats",
+  "ticket_validate": "Verification",
+  "ticket_status": "Ticket status"
+}

@@ -762,7 +762,7 @@ packages:
     description:
       path: "."
       ref: develop
-      resolved-ref: "0c64489df858bb3b01949fb909c808fe15876ad6"
+      resolved-ref: "6a392441e66c043dd0ddea2be892a40844d76c59"
       url: "https://github.com/nguereza-tony/platine_flutter"
     source: git
     version: "0.0.5"

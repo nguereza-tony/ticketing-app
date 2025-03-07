@@ -1,0 +1,3 @@
+{
+  "ticket_validated_success": "Ticket {code: String} has been validated successfully"
+}

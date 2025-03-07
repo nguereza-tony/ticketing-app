@@ -1,0 +1,10 @@
+{
+  "api": {
+    "ticket_not_found": "This ticket does not exist",
+    "ticket_already_validated": "This ticket is already used",
+    "invalid_uuid": "The ticket ID is not valid"
+  },
+  "scan_qr_code_error": "Error while scanning QR code",
+  "scan_qr_code_no_result_error": "No result found after scanning QR code",
+  "scan_qr_code_wrong_format_error": "QR code data is invalid"
+}
