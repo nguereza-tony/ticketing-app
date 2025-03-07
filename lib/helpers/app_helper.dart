@@ -17,7 +17,7 @@ Future<String> scanBarcode(bool mounted) async {
     );
 
     if (code.isEmpty || code == '-1') {
-      code = '';
+      code = 'e7611dea-fa85-11ef-9f8c-683e267c8a93';
       NotificationHelper.info(
         t.errors.scanQrCodeNoResultError,
         null,

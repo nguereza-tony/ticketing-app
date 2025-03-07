@@ -21,7 +21,7 @@ class TranslationsEn extends Translations {
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
 		    ordinalResolver: ordinalResolver,
-		    s: $calc1(17, 3, 401),
+		    s: $calc1(1, 1, 127),
 		  ),
 		  super(cardinalResolver: cardinalResolver, ordinalResolver: ordinalResolver);
 

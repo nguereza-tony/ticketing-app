@@ -1,7 +1,8 @@
 {
   "api": {
     "ticket_not_found": "Ce ticket n'existe pas",
-    "ticket_already_validated": "Ce ticket est déjà utilisé"
+    "ticket_already_validated": "Ce ticket est déjà utilisé",
+    "invalid_uuid": "L'identifiant du ticket n'est pas valide"
   },
   "scan_qr_code_error": "Erreur lors du scannage du QR code",
   "scan_qr_code_no_result_error": "Aucun résultat trouvé après scannage du QR code",

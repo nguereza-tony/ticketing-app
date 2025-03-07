@@ -9,7 +9,6 @@ class ApiEndpoints {
   static const userValidationCodeConfirm = '/users/verification/confirm';
   static const authToken = '/users/token';
   static const ticketList = '/tickets';
-  static const ticketDetail = '/tickets';
   static const ticketInfo = '/tickets/info';
   static const ticketValidation = '/tickets/validate';
 }

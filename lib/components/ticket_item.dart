@@ -63,11 +63,11 @@ class TicketItem extends StatelessWidget {
               ),
               Text(
                 ticket.category.name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontFamily: 'poppins',
-                  fontWeight: FontWeight.w400,
-                  color: HexColor('#f500ff'),
+                  fontWeight: FontWeight.w700,
+                  color: Colors.purple,
                 ),
               ),
               Flexible(child: Container()),
@@ -82,6 +82,7 @@ class TicketItem extends StatelessWidget {
                     fontSize: 12,
                     fontFamily: 'poppins',
                     fontWeight: FontWeight.w700,
+                    color: Colors.blueAccent,
                   ),
                 ),
               ],
@@ -117,6 +118,7 @@ class TicketItem extends StatelessWidget {
                   fontSize: 12,
                   fontFamily: 'poppins',
                   fontWeight: FontWeight.w700,
+                  color: Colors.green,
                 ),
               ),
             ],

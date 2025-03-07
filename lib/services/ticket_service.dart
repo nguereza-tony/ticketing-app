@@ -33,7 +33,8 @@ class TicketService {
     var api = await ApiClient().create();
 
     final response = await api.get(
-      '${ApiEndpoints.ticketInfo}/$uuid',
+      ApiEndpoints.ticketInfo,
+      queryParameters: {'uuid': uuid},
     );
     if (response.isSuccess) {
       return Ticket.fromJson(response.data['data']);
@@ -46,7 +47,8 @@ class TicketService {
     var api = await ApiClient().create();
 
     final response = await api.post(
-      '${ApiEndpoints.ticketValidation}/$uuid',
+      ApiEndpoints.ticketValidation,
+      data: {'uuid': uuid},
     );
     if (response.isSuccess) {
       return Ticket.fromJson(response.data['data']);

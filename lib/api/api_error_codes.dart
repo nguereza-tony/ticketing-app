@@ -16,4 +16,5 @@ var apiErrorCodes = {
   500100: pft.t.errors.api.internalServerError,
   400104: t.errors.api.ticketAlreadyValidated,
   404105: t.errors.api.ticketNotFound,
+  422100: t.errors.api.invalidUuid,
 };
