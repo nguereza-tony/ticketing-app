@@ -1,43 +1,92 @@
 import 'package:flutter/material.dart';
-import 'package:ticketing/screens/dashboard_screen.dart';
-import 'package:ticketing/screens/user/login_screen.dart';
+import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:platine_flutter/platine_flutter.dart';
+import 'package:ticketing/components/onboarding_slide.dart';
+import 'package:ticketing/i18n/translations.g.dart';
+import 'package:ticketing/screens/landing_screen.dart';
 
-class OnBoardingScreen extends StatefulWidget {
-  const OnBoardingScreen({super.key});
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
 
   @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  final Color kDarkBlueColor = const Color(0xFF053149);
+
   @override
   void initState() {
     super.initState();
-    _redirect();
-  }
-
-  Future<void> _redirect() async {
-    await Future.delayed(Duration.zero);
-    if (mounted == false) {
-      return;
-    }
-
-    if (await AuthHelper.isLogged()) {
-      switchToScreen(context.mounted ? context : null, const DashboardScreen());
-    } else {
-      switchToScreen(context.mounted ? context : null, const LoginScreen());
-    }
   }
 
   @override
-  Scaffold build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(
-          color: Colors.black,
+  Widget build(BuildContext context) {
+    final t = Translations.of(context);
+
+    return OnBoardingSlider(
+      finishButtonText: t.labels.onboarding.terminate,
+      onFinish: () {
+        terminate(context);
+      },
+      finishButtonStyle: FinishButtonStyle(
+        backgroundColor: kDarkBlueColor,
+      ),
+      skipTextButton: Text(
+        t.labels.onboarding.skip,
+        style: TextStyle(
+          fontSize: 16,
+          color: kDarkBlueColor,
+          fontWeight: FontWeight.w600,
         ),
       ),
+      controllerColor: kDarkBlueColor,
+      totalPage: 3,
+      headerBackgroundColor: Colors.white,
+      pageBackgroundColor: Colors.white,
+      background: [
+        Image.asset(
+          'assets/images/slide_1.png',
+          height: 400,
+        ),
+        Image.asset(
+          'assets/images/slide_2.png',
+          height: 400,
+        ),
+        Image.asset(
+          'assets/images/slide_3.png',
+          height: 400,
+        ),
+      ],
+      speed: 1.8,
+      pageBodies: [
+        OnboardingSlide(
+          title: t.labels.onboarding.title1,
+          description: t.labels.onboarding.description1,
+          color: kDarkBlueColor,
+        ),
+        OnboardingSlide(
+          title: t.labels.onboarding.title2,
+          description: t.labels.onboarding.description2,
+          color: kDarkBlueColor,
+        ),
+        OnboardingSlide(
+          title: t.labels.onboarding.title3,
+          description: t.labels.onboarding.description3,
+          color: kDarkBlueColor,
+        ),
+      ],
     );
+  }
+
+  Future<void> terminate(BuildContext? context) async {
+    await ConfigHelper.init();
+    ConfigHelper.setItem('onboarding', true);
+    if (context != null) {
+      switchToScreen(
+        context.mounted ? context : null,
+        const LandingScreen(),
+      );
+    }
   }
 }

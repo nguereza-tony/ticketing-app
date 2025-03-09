@@ -17,5 +17,15 @@
   "services": "Services",
   "stats": "Stats",
   "ticket_validate": "Verification",
-  "ticket_status": "Ticket status"
+  "ticket_status": "Ticket status",
+  "onboarding": {
+    "skip": "Skip",
+    "terminate": "Go !",
+    "title_1": "Simple and intuitive ...",
+    "title_2": "Ticket management ...",
+    "title_3": "You have arrived!",
+    "description_1": "A simple and intuitive application allows users to get to grips with the system very quickly.",
+    "description_2": "Check and validate a ticket for an event (sport, wedding, etc.) by scanning the QR code",
+    "description_3": "You are done, launch the application and enjoy its features"
+  }
 }

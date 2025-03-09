@@ -17,5 +17,15 @@
   "services": "Services",
   "stats": "Stats",
   "ticket_validate": "Vérification",
-  "ticket_status": "Statut ticket"
+  "ticket_status": "Statut ticket",
+  "onboarding": {
+    "skip": "Sauter",
+    "terminate": "Terminer !",
+    "title_1": "Simple et intuitifs ...",
+    "title_2": "Gestion des tickets ...",
+    "title_3": "Vous êtes arrivés !",
+    "description_1": "Une application simple et intuitif permet aux utilisateurs de prendre en main le sytème très rapidement.",
+    "description_2": "Vérifier et valider un ticket pour un évènement (sport, mariage, etc.) en scannant le code QR",
+    "description_3": "Vous avez fini, lancer l’application et profitez de ses fonctionnalités"
+  }
 }

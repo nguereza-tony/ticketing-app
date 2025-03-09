@@ -5,8 +5,12 @@ class ServiceCard extends StatelessWidget {
   String title;
   Widget icon;
   void Function()? action;
-  ServiceCard(
-      {super.key, required this.title, required this.icon, this.action});
+  ServiceCard({
+    super.key,
+    required this.title,
+    required this.icon,
+    this.action,
+  });
 
   @override
   Widget build(BuildContext context) {
