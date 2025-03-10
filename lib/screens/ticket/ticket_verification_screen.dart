@@ -3,7 +3,6 @@ import 'package:platine_flutter/platine_flutter.dart';
 import 'package:ticketing/components/ticket_item.dart';
 import 'package:ticketing/i18n/translations.g.dart';
 import 'package:ticketing/models/ticket.dart';
-import 'package:ticketing/screens/ticket/ticket_validate_screen.dart';
 import 'package:ticketing/services/ticket_service.dart';
 
 class TicketVerificationScreen extends StatefulWidget {
@@ -73,10 +72,9 @@ class _TicketVerificationScreenState extends State<TicketVerificationScreen> {
                                   5,
                                 );
 
-                                switchToScreen(
-                                  context,
-                                  const TicketValidateScreen(),
-                                );
+                                if (context.mounted) {
+                                  Navigator.pop(context);
+                                }
                               }
                             });
                           },

@@ -29,7 +29,7 @@ class OnboardingSlide extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: color,
-              fontSize: 24.0,
+              fontSize: 20,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -40,8 +40,8 @@ class OnboardingSlide extends StatelessWidget {
             description,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              color: Colors.black26,
-              fontSize: 18.0,
+              color: Colors.black,
+              fontSize: 16.0,
               fontWeight: FontWeight.w600,
             ),
           ),

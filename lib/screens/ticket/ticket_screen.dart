@@ -129,7 +129,9 @@ class _TicketScreenState extends State<TicketScreen> {
 
   /// Handle filter
   Future<void> _handleFilter(
-      BuildContext context, TicketProvider provider) async {
+    BuildContext context,
+    TicketProvider provider,
+  ) async {
     var result = await switchToScreenWithResults(
       context,
       TicketFilterScreen(filters: widget.filters ?? {}),

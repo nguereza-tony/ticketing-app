@@ -45,15 +45,8 @@ class _TicketValidateScreenState extends State<TicketValidateScreen> {
                       return;
                     }
 
-                    // Handle
-                    _ticketService.info(code).then((ticket) {
-                      if (ticket != null) {
-                        switchToScreen(
-                          context,
-                          TicketVerificationScreen(ticket: ticket, uuid: code),
-                        );
-                      }
-                    });
+                    // Handle check
+                    _handleTicketCheck(code);
                   },
                   backgroundColor: kButtonBgColor,
                   textColor: kButtonColor,
@@ -65,5 +58,18 @@ class _TicketValidateScreenState extends State<TicketValidateScreen> {
         ),
       ),
     );
+  }
+
+  /// Handle ticket check
+  Future<void> _handleTicketCheck(String code) async {
+    // Handle
+    _ticketService.info(code).then((ticket) async {
+      if (ticket != null) {
+        await switchToScreenWithResults(
+          context,
+          TicketVerificationScreen(ticket: ticket, uuid: code),
+        );
+      }
+    });
   }
 }

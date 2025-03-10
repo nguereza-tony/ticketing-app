@@ -13,7 +13,7 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final Color kDarkBlueColor = const Color(0xFF053149);
+  final Color kDarkBlueColor = kBorderColor;
 
   @override
   void initState() {
@@ -44,18 +44,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       totalPage: 3,
       headerBackgroundColor: Colors.white,
       pageBackgroundColor: Colors.white,
+      centerBackground: true,
       background: [
         Image.asset(
           'assets/images/slide_1.png',
-          height: 400,
+          height: 256,
+          width: 256,
         ),
         Image.asset(
           'assets/images/slide_2.png',
-          height: 400,
+          height: 256,
+          width: 256,
         ),
         Image.asset(
           'assets/images/slide_3.png',
-          height: 400,
+          height: 256,
+          width: 256,
         ),
       ],
       speed: 1.8,
